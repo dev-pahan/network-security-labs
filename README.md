@@ -27,7 +27,7 @@ I use this repo to record the tools, configurations, and experiments that help m
   
   Compared scan outputs between Kali and Ubuntu environments.
 
-🔹 2. Linux Firewall Configuration (iptables / nftables)
+### 🔹 2. Linux Firewall Configuration (iptables / nftables)
   - Configured iptables to define custom firewall rules:
     ```
     sudo iptables -P INPUT DROP
@@ -46,7 +46,7 @@ I use this repo to record the tools, configurations, and experiments that help m
   ```
   - Understood rule chains, persistence, and NAT translation.
 
-🔹 3. Secure Remote Access with OpenSSH
+### 🔹 3. Secure Remote Access with OpenSSH
   - Installed and configured an OpenSSH server on Ubuntu.
   
   - Implemented key-based authentication and disabled password logins.
@@ -55,7 +55,7 @@ I use this repo to record the tools, configurations, and experiments that help m
   
   - Tested access control by allowing specific IP ranges only.
 
-🔹 4. Cowrie Honeypot Deployment & Log Analysis
+### 🔹 4. Cowrie Honeypot Deployment & Log Analysis
   - Deployed a Cowrie SSH honeypot to observe attacker interactions.
   
   - Captured logs containing:
@@ -69,7 +69,7 @@ I use this repo to record the tools, configurations, and experiments that help m
   - Analyzed logs to understand common attack patterns and indicators of compromise (IOCs).
 
 
-🔹 5. Encryption Practice
+### 🔹 5. Encryption Practice
   - Implemented AES and RSA encryption using Python and OpenSSL.
   
   - Practiced hashing and verification:
