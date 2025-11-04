@@ -1,11 +1,11 @@
-# 🌐 Network and Security Fundamentals  
+# Network and Security Fundamentals  
 
 This repository documents my hands-on journey through **network fundamentals**, **security configurations**, and **log analysis** as part of my BSc Cyber Security at ECU.  
 
 I use this repo to record the tools, configurations, and experiments that help me build a base foundation for my future in **cyber security** and **network defense**.  
 
 
-## 🧰 Tools & Technologies  
+## Tools & Technologies  
 - **Ubuntu / Kali Linux** – primary environments for configuration and testing  
 - **Nmap** – network and service scanning  
 - **Wireshark** – packet capture and protocol inspection  
@@ -16,7 +16,7 @@ I use this repo to record the tools, configurations, and experiments that help m
 - **Log Analysis** – reviewing system, firewall, and honeypot logs for anomalies  
 
 
-## 🧩 Key Practical Labs  
+## Key Practical Labs  
 
 ### 🔹 **1. Nmap Scanning & Network Enumeration**  
   - Performed host discovery, port scans, and service identification using:  
@@ -79,7 +79,7 @@ I use this repo to record the tools, configurations, and experiments that help m
     ```
   - Learned the differences between encryption, hashing, and encoding, and how to combine them for data integrity.
 
-## 🧠 What I’ve Learned
+## What I’ve Learned
   - Fundamentals of TCP/IP, subnetting, and network protocols.
   
   - Secure access management using OpenSSH.
