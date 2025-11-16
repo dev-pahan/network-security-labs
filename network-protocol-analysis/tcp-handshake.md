@@ -14,7 +14,7 @@ Analyse a real TCP handshake captured in Wireshark and understand how connection
 
 ### 1. Start Packet Capture
 ```bash
-1. sudo wireshark
+sudo wireshark
 Apply filter: tcp.flags.syn == 1 || tcp.flags.ack == 1
 ```
 ### 2. Initiate a Connection
