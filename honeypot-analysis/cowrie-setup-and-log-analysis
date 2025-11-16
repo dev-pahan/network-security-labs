@@ -1,0 +1,12 @@
+### 🔹 Cowrie Honeypot Deployment & Log Analysis
+  - Deployed a Cowrie SSH honeypot to observe attacker interactions.
+  
+  - Captured logs containing:
+  
+  - Attacker IP addresses, timestamps, and entered commands
+  
+  - Common brute-force credentials
+  
+  - File download attempts and malware behavior
+  
+  - Analyzed logs to understand common attack patterns and indicators of compromise (IOCs).
