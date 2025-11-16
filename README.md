@@ -1,9 +1,17 @@
 # Network and Security Fundamentals  
 
-This repository documents my hands-on journey through **network fundamentals**, **security configurations**, and **log analysis** as part of my BSc Cyber Security at ECU.  
+This repository contains my hands-on practical work in networking, cyber security, and defensive operations, completed as part of my BSc in Cyber Security at ECU.
 
-I use this repo to record the tools, configurations, and experiments that help me build a base foundation for my future in **cyber security** and **network defense**.  
+It serves as a collection of technical labs, write-ups, and configurations demonstrating my skills in:
 
+- Network scanning & enumeration
+- Firewall configuration
+- Secure remote access
+- Traffic capture & protocol analysis
+- Honeypot deployment and log investigation
+- Encryption, hashing, and key management
+
+These labs build my foundation for future work in SOC analysis, blue teaming, and network defense.
 
 ## Tools & Technologies  
 - **Ubuntu / Kali Linux** – primary environments for configuration and testing  
@@ -13,105 +21,35 @@ I use this repo to record the tools, configurations, and experiments that help m
 - **OpenSSH (with Google Authenticator MFA)** – secure remote access and multi-factor authentication setup
 - **Cowrie Honeypot** – simulating SSH attacks and analyzing malicious activity  
 - **Encryption Methods** – symmetric & asymmetric cryptography (AES, RSA)  
-- **Log Analysis** – reviewing system, firewall, and honeypot logs for anomalies  
+- **Log Analysis** – reviewing system, firewall, and honeypot logs for anomalies
 
-
-## Key Practical Labs  
-
-### 🔹 **1. Nmap Scanning & Network Enumeration**  
-  - Performed host discovery, port scans, and service identification using:  
-    ```
-    nmap -sV -A 192.168.1.10
-    ```
-  - Learned to interpret open ports, banners, and OS fingerprints.
-  
-  Compared scan outputs between Kali and Ubuntu environments.
-
-### 🔹 2. Linux Firewall Configuration (iptables / nftables)
-  - Configured iptables to define custom firewall rules:
-    ```
-    sudo iptables -P INPUT DROP
-    sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-    sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-    sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-    sudo iptables -L -v
-    ```
-  - Logged dropped packets for later analysis via /var/log/syslog.
-  
-  - Explored nftables for modern rule management and compared efficiency with iptables.
-  
-  - Practiced packet tracing with:
-  ```
-  sudo iptables -A INPUT -j LOG --log-prefix "Dropped Packet: "
-  ```
-  - Understood rule chains, persistence, and NAT translation.
-
-### 🔹 3. Secure Remote Access with OpenSSH (with MFA)
-
-  - Installed and configured an OpenSSH server on Ubuntu for secure remote access.
-  
-  - Implemented key-based authentication and integrated Google Authenticator MFA for an additional security layer.
-  Steps included:
-  
-  1. Installed the PAM module for Google Authenticator:
-  ```
-  sudo apt install libpam-google-authenticator
-  ```
-  
-  2. Enabled MFA per user:
-  ```
-  google-authenticator
-  ```
-  
-  3. Updated the PAM config at /etc/pam.d/sshd:
-  ```
-  auth required pam_google_authenticator.so
-  ```
-  
-  4. Edited /etc/ssh/sshd_config to allow both public key and MFA:
-  ```
-  ChallengeResponseAuthentication yes
-  AuthenticationMethods publickey,keyboard-interactive
-  ```
-  
-  5. Restarted SSH and tested login using a one-time MFA code.
-  
-  Monitored /var/log/auth.log for failed logins, brute-force attempts, and MFA validation.
-  Restricted SSH access to specific IP ranges for better control.
-
-### 🔹 4. Cowrie Honeypot Deployment & Log Analysis
-  - Deployed a Cowrie SSH honeypot to observe attacker interactions.
-  
-  - Captured logs containing:
-  
-  - Attacker IP addresses, timestamps, and entered commands
-  
-  - Common brute-force credentials
-  
-  - File download attempts and malware behavior
-  
-  - Analyzed logs to understand common attack patterns and indicators of compromise (IOCs).
-
-
-### 🔹 5. Encryption Practice
-  - Implemented AES and RSA encryption using Python and OpenSSL.
-  
-  - Practiced hashing and verification:
-    ```
-    md5sum file.txt
-    sha256sum file.txt
-    ```
-  - Learned the differences between encryption, hashing, and encoding, and how to combine them for data integrity.
+## Repository Structure
+```
+network-security-labs/
+│
+│
+├── network-protocol-analysis/   # TCP, packet capture, Wireshark, Nmap
+│     ├── tcp-handshake.md
+│     ├── nmap-scanning.md
+│
+├── firewall-configuration/      # iptables & nftables labs
+│     ├── iptables-basics.md
+│
+├── ssh-security/                # OpenSSH + MFA
+│     ├── openssh-and-MFA-setup.md
+│
+├── honeypot-analysis/           # Cowrie deployment & attacker behaviour
+│     ├── cowrie-setup-and-log-analysis
+│
+└── encryption-practice/
+      ├── encryption-practice.md
+```
 
 ## What I’ve Learned
-  - Fundamentals of TCP/IP, subnetting, and network protocols.
-  
-  - Secure access management using OpenSSH.
-  
-  - Firewall management with iptables/nftables and packet filtering logic.
-  
-  - Hands-on log analysis to detect suspicious activity.
-  
-  - Practical exposure to honeypots and real-world attack data.
-  
-  - Strengthened command-line confidence in Linux environments.
+- Practical understanding of TCP/IP, ports, protocols, and packet flows
+- Experience performing network reconnaissance using Nmap
+- Ability to configure Linux firewalls for secure access control
+- Hands-on experience securing SSH with public keys + MFA
+- Exposure to real attacker behaviour using a Cowrie honeypot
+- Understanding of encryption, hashing, and key generation
+- Stronger command-line, investigation, and analysis skills
